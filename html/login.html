@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!--Metatags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login - Nomi</title>
+
+  <!-- Links -->
+   <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/login.css">
+  <link rel="shortcut icon" href="../img/icon Nomi.png">
+</head>
+
+<script src="../js/login.js"></script>
+
+<body class="login-body">
+  <!-- Container -->
+  <div class="background"></div>
+  <main class="container">
+    <div class="exit">
+      <a href="../../index.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+    </div>
+
+    <!-- Login -->
+    <div class="logo">
+      <img src="../img/login/logo login.png" class="logo">
+    </div>
+    <h1 id="h1-login">Login</h1>
+
+    <form class="input-form" action="../user-pages/user-home.html">
+      <div class="input-field">
+        <input type="text" name="username" id="username" placeholder="Usuário ou Email" required>
+        <ion-icon name="person-outline"></ion-icon>
+        <div class="underline"></div>
+      </div>
+      
+      <div class="input-field">
+        <input type="password" name="password" id="password" placeholder="Senha" required="">
+        <div class="underline"></div>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="mantenha-conectado" class="color-checkbox">
+        <span class="slider">Mantenha-me Conectado</span>
+        <span class="forgot"><a href="./forgot.html" class="toggle-link">Esqueceu a Senha?</a></span>
+      </label>
+      
+      <input type="submit" value="Continue">
+    </form>
+    
+    <!-- Login com Redes Sociais -->
+    <div class="footer">
+      <span class="midia">Ou Entre com uma Rede Social</span>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://accounts.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+        <a href="https://www.linkedin.com/login/pt" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+      </div>
+      </div>
+      
+      <p class="account">Não possui uma Conta?
+        <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
+      </p>
+  </main>
+  
+  <!-- Script dos Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

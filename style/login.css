@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-image: url(../img/login/background\ login.png);
+    background-size: cover;
+}
+
+.login-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+main.container {
+  max-width: 500px;
+  min-height: 35vh;
+  padding: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  backdrop-filter: blur(0.4rem);
+  z-index: 1;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .logo {
+  width: 400px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+#h1-login {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#h1-login::before {
+  content: '';
+  position: absolute;
+  height: 5px;
+  width: 36px;
+  bottom: 5px;
+  left: 0;
+  border-radius: 8px;
+  margin: -5px;
+  margin-left: 0.5px;  
+  background-color: aqua;
+}
+
+main img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+main a {
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.exit {
+  position: absolute;
+  top: 0.1%;
+  left: 1%;
+  text-align: left;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+.exit a ion-icon {
+  color: #ffffff;
+}
+
+.exit a ion-icon:hover {
+  color: aqua;
+}
+
+#h1-signup {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#h1-signup::before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 31px;
+    bottom: 5px;
+    left: 0;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+#verify-h1 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+#verify-p {
+  color: #ECECEC;
+  font-size: 1.01rem;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.input-field input {
+  outline: none;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 
+    3px 3px 8px rgba(0, 0, 0, 0.4),
+    0 0 2px rgba(0, 0, 0, 0.3),
+    inset 0 0 5px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, border 0.3s ease;
+  position: relative;
+  top: 0;
+  border: 2px solid transparent;
+}
+
+.input-field input:focus {
+  box-shadow: 
+    5px 5px 10px rgba(0, 0, 0, 0.5),
+    0 0 4px rgba(0, 0, 0, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  outline: 2px solid var(--tertiary);
+  outline-offset: 3px; 
+}
+
+.input-field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.input-field .underline {
+  margin: 0 auto 0.7rem;
+  position: relative;
+  border-radius: 8px;
+  bottom: 1px;
+  left: 0;
+  height: 2px;
+  width: 98%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.input-field input:focus ~ .underline::before {
+  transform: scaleX(1);
+}
+
+.input-field ion-icon {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  transform: translateY(-50%);
+  color: black;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.input-field input:focus ~ ion-icon {
+  color: #00b7ff;
+  transform: translateY(-60%) scale(1.1);
+}
+
+input[type="checkbox"] {
+  accent-color: #00b7ff;
+  cursor: pointer;
+}
+
+.slider {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.midia {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.forgot {
+  font-size: 0.9;
+  margin-left: 3.1rem;
+  text-align: right;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--preto);
+}
+
+.forgot:hover {
+  color: var(--tertiary);
+}
+
+form input[type="submit"] {
+  margin-top: 2rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 4px;
+  background-color: transparent ;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  border-color: #ffffff;
+}
+
+form input[type="submit"]:hover {
+  letter-spacing: 1px;
+  background-color: rgb(0, 132, 255);
+}
+
+p.agree {
+  color: #ECECEC;
+  display: flex;
+}
+
+#agree {
+  margin-right: 0.4rem;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.footer span {
+  color: #ECECEC;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+}
+
+.footer .social-icons a ion-icon{
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.2s;
+  color: #ffffff;
+}
+
+.footer .social-icons a ion-icon:hover {
+  color: #00b7ff;
+  border-color: var(--tertiary);
+}
+
+.account {
+font-size: 1rem;
+color: #ECECEC;
+display: flex;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main .account {
+margin-top: 2rem;
+}
+
+.toggle-link {
+  margin-left: 5px;
+  text-align: right;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.4s;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.toggle-link:hover {
+  color: #00b7ff;
+}
