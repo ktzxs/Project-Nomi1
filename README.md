@@ -1,4 +1,5 @@
 🌟 Nomi
+
 Nomi é uma plataforma online feita para quem acredita que aprender deve ser algo simples, acessível e gratuito.
 Nosso objetivo é oferecer cursos online 100% gratuitos, ajudando pessoas de todas as idades a desenvolver novas habilidades, conquistar oportunidades e crescer pessoal e profissionalmente.
 Aqui, o conhecimento é para todos. Com uma interface fácil de usar e aulas que você pode assistir de onde quiser, o Nomi torna o aprendizado mais leve, prático e acessível.
