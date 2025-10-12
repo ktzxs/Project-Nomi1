@@ -22,6 +22,10 @@ p {
     margin-top: 2%;
 }
 
+#verify-h1 {
+    color: aqua;
+}
+
 header {
     position: sticky;
     top: 0;
@@ -136,12 +140,80 @@ main {
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
 }
 
+.sidebar {
+    width: 27vw;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: fit-content;
+}
+
+.sidebar-widget {
+    background-color: white;
+    border-radius: 16px;
+    margin: 3%;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-widget h3 {
+    color: rgb(4, 0, 255);
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-widget {
+    font-size: 20px;
+    color: var(--tertiary);
+}
+
+.item {
+    margin-bottom: 15px;
+}
+
+.item span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.bar {
+    height: 8px;
+    background-color: #eaeaea;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.level {
+    height: 100%;
+    background-color: #f9fd03;
+    border-radius: 4px;
+}
+
+.value {
+    text-align: left;
+    font-size: 12px;
+    color: #000000;
+}
+
 /* Slide */
 .slider {
    margin: 0 auto;
    width: 100%;
-   max-width: 1400px; /* Limita a largura máxima em telas grandes */
-   height: 500px; /* Altura fixa e confortável */
+   max-width: 1400px; 
+   height: 500px; 
    margin-top: 30px;
    overflow: hidden; 
    border-radius: 12px; 
@@ -194,7 +266,7 @@ main {
 }
 
 .manual-btn:hover {
-    background-color: #05bb9d;
+    background-color: aqua;
 }
 
 #radio1:checked ~.first {
@@ -214,7 +286,7 @@ main {
 }
 
 .navigation-auto div {
-    border: 2px solid #05bb9d;
+    border: 2px solid #20a6ff;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -234,17 +306,17 @@ main {
 }
 
 #radio1:checked ~.navigation-auto .auto-btn1 {
-    background-color: #05bb9d;
+    background-color: aqua;
 }
 
 #radio2:checked ~.navigation-auto .auto-btn2 {
-    background-color: #05bb9d;
+    background-color: aqua;
 }
 
 #radio3:checked ~.navigation-auto .auto-btn3 {
-    background-color: #05bb9d;
+    background-color: aqua;
 }
 
 #radio4:checked ~.navigation-auto .auto-btn4 {
-    background-color: #05bb9d;
+    background-color: aqua;
 }

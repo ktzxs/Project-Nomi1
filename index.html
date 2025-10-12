@@ -8,9 +8,6 @@
     <link rel="shortcut icon" href="img/icon Nomi.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
 
-    <!--Script-->
-    <script src="./js/script.js"></script>
-
     <!-- Script dos Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -28,7 +25,6 @@
 
             <nav>
                 <a href='#'>Inicio</a>
-                <a href='#'>Cursos</a>
                 <a href='#'>Contatos</a>
                 <a href='html/login.html'>Login <ion-icon name="person-outline"></ion-icon></a> 
             </nav>
@@ -52,49 +48,60 @@
             </div>
         </section>
 
+        <!--Indice de avanco-->
+        <div class="sidebar-widget">
+            <h3> Progresso de Aprendizado</h3>
+            <div class="item">
+                <div class="bar">
+                    <div class="level" style="width: 75%"></div>
+                </div>
+                <span class="value">Boa (75/100)</span>
+            </div>
+        </div>
+
         <!-- Desenvolvimento do Slide -->
         <section class="slider">
-        <section class="slides">
-            <!--radio buttons-->
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-            <!--Fim radio buttons-->
+            <section class="slides">
+                <!--radio buttons-->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!--Fim radio buttons-->
 
-            <!--slides imagens-->
-            <section class="slide first">
-                <img src="img/carrosel/carossel img1.png" alt="image 1">
-            </section>
-            <section class="slide">
-                <img src="img/carrosel/carrosel img2.png" alt="image 1">
-            </section>
-             <section class="slide">
-                <img src="img/carrosel/carrosel img3.png" alt="image 1">
-            </section>
-             <section class="slide">
-                <img src="img/carrosel/carrosel img4.png" alt="image 1">
-            </section>
-            <!-- Fim slides imagens-->
+                <!--slides imagens-->
+                <section class="slide first">
+                    <img src="img/carrosel/carossel img1.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img2.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img3.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img4.png" alt="image 1">
+                </section>
+                <!-- Fim slides imagens-->
 
-            <!-- navigation auto-->
-             <section class="navigation-auto">
-                <section class="auto-btn1"></section>
-                <section class="auto-btn2"></section>
-                <section class="auto-btn3"></section>
-                <section class="auto-btn4"></section>
-             </section>
+                <!-- navigation auto-->
+                <section class="navigation-auto">
+                    <section class="auto-btn1"></section>
+                    <section class="auto-btn2"></section>
+                    <section class="auto-btn3"></section>
+                    <section class="auto-btn4"></section>
+                </section>
+            </section>
 
+            <section class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </section>
         </section>
-
-        <section class="manual-navigation">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-        </section>
-    </section>
-    
     </Main>
 </body>
+<!--Script-->
+<script src="./js/script.js"></script>
 </html>
