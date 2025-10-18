@@ -5,7 +5,7 @@ Nosso objetivo é oferecer cursos online 100% gratuitos, ajudando pessoas de tod
 Aqui, o conhecimento é para todos. Com uma interface fácil de usar e aulas que você pode assistir de onde quiser, o Nomi torna o aprendizado mais leve, prático e acessível.
 
 💻 O que você encontra no Nomi
-📚 Diversos cursos gratuitos
+📚 Curso gratuito
 🌍 Acesso totalmente online
 🕐 Estude no seu próprio ritmo
 💡 Conteúdo de qualidade, pensado para o seu desenvolvimento
