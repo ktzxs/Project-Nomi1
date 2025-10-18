@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!--Metatags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nature News</title>
+
+  <!-- Links -->
+  <link rel="stylesheet" href="../style/login.css">
+  
+  <link rel="shortcut icon" href="../img/icon Nomi.png" type="image/x-icon">
+
+  
+  <body class="login-body">
+    <!-- Container -->
+  <div class="background"></div>
+  <main class="container">
+    <div class="exit"><a href="login.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a></div>
+
+    <!-- Register -->
+    <div class="logo-ajuste">
+      <img src="../img/login/logo login.png" class="logo">
+    </div>
+    <h1 id="h1-login">Sign Up</h1>
+
+    <form class="input-form" action="../user-pages/user-home.html" onsubmit="return validarSenha()">
+      <div class="input-field">
+        <input type="text" name="username" id="username" placeholder="Nome de Usuário" required>
+        <ion-icon name="person-outline"></ion-icon>
+        <div class="underline"></div>
+      </div>
+
+      <div class="input-field">
+        <input type="email" name="email" id="email" placeholder="Email" required="">
+        <ion-icon name="mail-outline"></ion-icon>
+        <div class="underline"></div>
+      </div>
+
+      <div class="input-field">
+        <input type="password" name="password" id="password" placeholder="Senha" required="">
+        <ion-icon name="lock-closed-outline" id="togglePassword1" onclick="togglePassword('password', 'togglePassword1')"></ion-icon>
+        <div class="underline"></div>
+      </div>
+      
+      <div class="input-field">
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme a Senha" required="">
+        <ion-icon name="lock-closed-outline" id="togglePassword2" onclick="togglePassword('confirmPassword', 'togglePassword2')"></ion-icon>
+        <div class="underline"></div>
+      </div>
+
+      <label class="switch">
+        <p class="agree">
+          <input type="checkbox" class="color-checkbox" id="agree" required="">Eu concordo com os
+          <a href="../terms.html">
+            <span class="toggle-link">Termos de Uso</span>
+          </a>.
+        </p>
+      </label>
+      
+      <label class="switch">
+        <p class="agree">
+          <input type="checkbox" class="color-checkbox" id="agree" required="">Eu concordo com a
+          <a href="../policy.html">
+            <span class="toggle-link">Política de Privacidade</span>
+          </a>.
+        </p>
+      </label>
+      
+      <input type="submit" value="Continue" href="../index.html">
+    </form>
+    <p id="mensagemErro" style="color: red; text-align: center;"></p>
+    
+    <!-- Login com Redes Sociais -->
+    <div class="footer">
+      <span>Ou Entre com uma Rede Social</span>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="https://accounts.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+        <a href="https://www.linkedin.com/login/pt" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+      </div>
+    </div>
+      
+    <p class="account">Já possui uma conta?
+      <a href="./login.html"><span class="toggle-link">Entre</span></a>
+    </p>
+  </main>
+    
+    <!-- Script dos Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

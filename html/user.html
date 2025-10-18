@@ -1,0 +1,135 @@
+<!--<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="shortcut icon" href="img/icon Nomi.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/user.css">
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <title>Nomi</title>
+</head>
+<body>
+    <Header>
+        <section class="topo">
+            <picture>
+                <a href="#">
+                    <img src="../img/Logo Nomi.png" alt="logo" class="logo">
+                </a>
+            </picture>
+
+            <nav>
+                <a href='#'>Inicio</a>
+                <a href='#'>Contatos</a>
+                <div class="login-container">
+                    <details>
+                        <summary>
+                            <ion-icon name="person-outline"></ion-icon>Usuário
+                        </summary>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="user.html">
+                                    <ion-icon name="person-circle-outline"></ion-icon>Minha Conta
+                                </a>
+                            </li>
+
+                            <li class="icon">
+                                <a href="">
+                                    <i class="fa-regular fa-comments empty"></i><i class="fa-solid fa-comments solid"></i>Mensagens
+                                </a>
+                            </li>
+
+                            <li class="icon">
+                                <a href="">
+                                    <i class="fa-regular fa-comments empty"></i><i class="fa-solid fa-comments solid"></i>Notificações
+                                </a>
+                            </li>
+
+                            <li>
+                                <label for="modal-toggle">
+                                    <ion-icon name="log-out-outline"></ion-icon> Sair
+                                </label>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </nav>
+
+        </section>
+    </Header>
+
+    <Main>
+        <section class="banner">
+            <div>
+                <h1>Transforme o aprendizado com tecnologia</h1>
+                <p>Explore o futuro da educação com a Nomi</p>
+
+                <div class="buttons">
+                    <button class="entrar">Explorar Curso</button>
+                    <button class="saiba">Saiba Mais</button>
+                </div>
+            </div>
+            <div class="img-banner">
+                <img src="img/imagem banner.png" alt="banner">
+            </div>
+        </section>
+
+        
+        <div class="sidebar-widget">
+            <h3> Progresso de Aprendizado</h3>
+            <div class="item">
+                <div class="bar">
+                    <div class="level" style="width: 75%"></div>
+                </div>
+                <span class="value">Boa (75/100)</span>
+            </div>
+        </div>
+
+        
+        <section class="slider">
+            <section class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                
+                <section class="slide first">
+                    <img src="img/carrosel/carossel img1.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img2.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img3.png" alt="image 1">
+                </section>
+                <section class="slide">
+                    <img src="img/carrosel/carrosel img4.png" alt="image 1">
+                </section>
+               
+                <section class="navigation-auto">
+                    <section class="auto-btn1"></section>
+                    <section class="auto-btn2"></section>
+                    <section class="auto-btn3"></section>
+                    <section class="auto-btn4"></section>
+                </section>
+            </section>
+
+            <section class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </section>
+        </section>
+    </Main>
+</body>
+
+<script src="./js/script.js"></script>
+</html>
