@@ -63,6 +63,34 @@
         <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
       </p>
   </main>
+
+  <script>
+    import { signInWithGooglePopup } from '../../firebase';
+      const [loading, setLoading] = useState(false);
+      const [user, setUser] = useState(null);
+      const [error, setError] = useState(null);
+
+      async function handleGoogleSignIn() {
+        setLoading(true);
+        setError(null);
+
+        try {
+          const userObj = await signWithGooglePopop();
+          setUser({
+            name: userObj.displayName,
+            email: userObj.email,
+            photoURL: userObj.photoURL,
+            uid: userObj.uid, 
+          });
+          console.log('Usuário logado:', userObj)
+        }catch (err) {
+          console.log('Erro ao entrar com o Google', err);
+          setError(err.messafe || 'Erro no Login');
+        } finally {
+          setLoading(false);
+        }
+      }
+  </script>
   
   <!-- Script dos Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
