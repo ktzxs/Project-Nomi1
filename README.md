@@ -16,6 +16,8 @@ Tecnologia	Função
 🧱 HTML	Estrutura das páginas
 🎨 CSS	Estilização
 ⚡ JavaScript	Interatividade e dinamismo no site
+Site estático
+Sem backend
 
 🎯 Nossa Missão
 Levar educação de qualidade para todos, acreditando que o conhecimento pode transformar vidas.
