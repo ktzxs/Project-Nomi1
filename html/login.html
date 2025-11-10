@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <!--Metatags -->
   <meta charset="UTF-8">
@@ -8,10 +9,30 @@
   <title>Login - Nomi</title>
 
   <!-- Links -->
-   <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="../style/login.css">
   <link rel="shortcut icon" href="../img/icon Nomi.png">
 </head>
+
+
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAeZBjEdRv5mhwk-UuadpdZkzImKdBNdJs",
+    authDomain: "project-nomi-5b550.firebaseapp.com",
+    projectId: "project-nomi-5b550",
+    storageBucket: "project-nomi-5b550.firebasestorage.app",
+    messagingSenderId: "240244825647",
+    appId: "1:240244825647:web:5ab6243b4d82b2a2d230da",
+    measurementId: "G-4N7WC9YTQM",
+  };
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+</script>
 
 <body class="login-body">
   <!-- Container -->
@@ -33,7 +54,7 @@
         <ion-icon name="person-outline"></ion-icon>
         <div class="underline"></div>
       </div>
-      
+
       <div class="input-field">
         <input type="password" name="password" id="password" placeholder="Senha" required="">
         <div class="underline"></div>
@@ -44,57 +65,31 @@
         <span class="slider">Mantenha-me Conectado</span>
         <span class="forgot"><a href="./forgot.html" class="toggle-link">Esqueceu a Senha?</a></span>
       </label>
-      
+
       <input type="submit" value="Continue" href="../index.html">
     </form>
-    
+
     <!-- Login com Redes Sociais -->
     <div class="footer">
       <span class="midia">Ou Entre com uma Rede Social</span>
       <div class="social-icons">
         <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a href="https://accounts.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
+        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon
+            name="logo-facebook"></ion-icon></a>
+        <a href="https://accounts.google.com/" target="_blank"><ion-icon name="logo-google" id="google"></ion-icon></a>
         <a href="https://www.linkedin.com/login/pt" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
       </div>
-      </div>
-      
-      <p class="account">Não possui uma Conta?
-        <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
-      </p>
+    </div>
+
+    <p class="account">Não possui uma Conta?
+      <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
+    </p>
   </main>
 
-  <script>
-    import { signInWithGooglePopup } from '../../firebase';
-      const [loading, setLoading] = useState(false);
-      const [user, setUser] = useState(null);
-      const [error, setError] = useState(null);
-
-      async function handleGoogleSignIn() {
-        setLoading(true);
-        setError(null);
-
-        try {
-          const userObj = await signWithGooglePopop();
-          setUser({
-            name: userObj.displayName,
-            email: userObj.email,
-            photoURL: userObj.photoURL,
-            uid: userObj.uid, 
-          });
-          console.log('Usuário logado:', userObj)
-        }catch (err) {
-          console.log('Erro ao entrar com o Google', err);
-          setError(err.messafe || 'Erro no Login');
-        } finally {
-          setLoading(false);
-        }
-      }
-  </script>
-  
   <!-- Script dos Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 <script src="../js/login.js"></script>
+
 </html>

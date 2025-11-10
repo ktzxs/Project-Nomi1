@@ -1,6 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
 
 const firebaseConfig = {
   apiKey: "AIzaSyAeZBjEdRv5mhwk-UuadpdZkzImKdBNdJs",
@@ -12,22 +11,6 @@ const firebaseConfig = {
   measurementId: "G-4N7WC9YTQM",
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
-
-async function signInWithGooglePopup() {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    return result.user;
-  } catch (error) {
-    throw error;
-  }
-}
-
-async function logout() {
-  await signOut(auth);
-}
-
-export { auth, googleProvider, signInWithGooglePopup, logout };
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
