@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <!--Metatags -->
+  <!-- Metatags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,63 +10,38 @@
 
   <!-- Links -->
   <link rel="stylesheet" href="../style/login.css">
-  <link rel="stylesheet" href="../style/login.css">
   <link rel="shortcut icon" href="../img/icon Nomi.png">
-  <script src="../js/login.js"></script>
-</head>
 
-
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyAeZBjEdRv5mhwk-UuadpdZkzImKdBNdJs",
-    authDomain: "project-nomi-5b550.firebaseapp.com",
-    projectId: "project-nomi-5b550",
-    storageBucket: "project-nomi-5b550.firebasestorage.app",
-    messagingSenderId: "240244825647",
-    appId: "1:240244825647:web:5ab6243b4d82b2a2d230da",
-    measurementId: "G-4N7WC9YTQM",
-  };
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-
-  function googleLogin() {
-    auth.signInWithPopup(provider)
-      .then((result) => {
-        const user = result.user;
-        console.log("Usuário logado:", user);
-
-        window.location.href = "../../index.html";
-      })
-      .catch((error) => {
-        console.error("Erro no login:", error);
-        alert("Erro ao entrar com o Google");
-      });
-  }
-</script>
+  <!-- Config Login Google -->
+  <script src="../js/firebase.js"></script>
+  <script type="module" src="../js/login.js"></script>
+</head>
 
 <body class="login-body">
-  <script>
-    document.getElementById('btn-google').addEventListener('click', googleLogin);
-  </script>
 
   <!-- Container -->
   <div class="background"></div>
+
   <main class="container">
+
     <div class="exit">
-      <a href="../../index.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+      <a href="../../index.html">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </a>
     </div>
 
     <!-- Login -->
     <div class="logo">
       <img src="../img/login/logo login.png" class="logo">
     </div>
+
     <h1 id="h1-login">Login</h1>
 
-    <form class="input-form" action="../index.htmls">
+    <form class="input-form" action="../index.html">
       <div class="input-field">
         <input type="text" name="username" id="username" placeholder="Usuário ou Email" required>
         <ion-icon name="person-outline"></ion-icon>
@@ -74,36 +49,47 @@ const provider = new firebase.auth.GoogleAuthProvider();
       </div>
 
       <div class="input-field">
-        <input type="password" name="password" id="password" placeholder="Senha" required="">
+        <input type="password" name="password" id="password" placeholder="Senha" required>
         <div class="underline"></div>
       </div>
 
       <label class="switch">
         <input type="checkbox" id="mantenha-conectado" class="color-checkbox">
         <span class="slider">Mantenha-me Conectado</span>
-        <span class="forgot"><a href="./forgot.html" class="toggle-link">Esqueceu a Senha?</a></span>
+        <span class="forgot">
+          <a href="./forgot.html" class="toggle-link">Esqueceu a Senha?</a>
+        </span>
       </label>
 
-      <input type="submit" value="Continue" href="../index.html">
+      <input type="submit" value="Continue">
     </form>
 
     <!-- Login com Redes Sociais -->
     <div class="footer">
       <span class="midia">Ou Entre com uma Rede Social</span>
+
       <div class="social-icons">
-        <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon
-            name="logo-facebook"></ion-icon></a>
-        <a id="btn-google" style="cursor: pointer">
-  <ion-icon name="logo-google"></ion-icon>
-</a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
 
+        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
 
-        <a href="https://www.linkedin.com/login/pt" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <!-- Google Login -->
+        <a id="btn-google">
+          <ion-icon name="logo-google"></ion-icon>
+        </a>
+
+        <a href="https://www.linkedin.com/login/pt" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
       </div>
     </div>
 
-    <p class="account">Não possui uma Conta?
+    <p class="account">
+      Não possui uma Conta?
       <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
     </p>
   </main>
@@ -111,7 +97,17 @@ const provider = new firebase.auth.GoogleAuthProvider();
   <!-- Script dos Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Botão Google -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnGoogle = document.getElementById('btn-google');
+      if (btnGoogle) {
+        btnGoogle.addEventListener('click', googleLogin);
+      }
+    });
+  </script>
+
 </body>
-<script src="../js/login.js"></script>
 
 </html>

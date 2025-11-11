@@ -1,4 +1,4 @@
-import { signInWithGooglePopup } from "firebase"
+import { signInWithGooglePopup } from "./firebase.js";
 
 document.getElementById("google").addEventListener("click", async () => {
   try {
@@ -9,6 +9,7 @@ document.getElementById("google").addEventListener("click", async () => {
     console.log("Erro", err);
   }
 });
+
 
 // import { FaRegCheckCircle, FaRegTimesCircle } from "react-icons/fa";
 
