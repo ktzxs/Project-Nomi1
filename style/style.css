@@ -53,6 +53,7 @@ header {
 
 .topo {
     display: flex;
+    background-size: cover;
     height: 180px;
     justify-content: space-between;
     align-items: center;
@@ -263,7 +264,7 @@ main {
     width: 800px;
     display: flex;
     justify-content: center;
-    margin-left: 15%;
+    margin-left: 19%;
 }
 
 .manual-btn {
@@ -386,3 +387,27 @@ main {
     height: 150px;
     margin: 1rem;
 }
+
+.footer {
+    width: 100%;
+    background-color: #007bff;
+    margin-top: 4rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.text-footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+
