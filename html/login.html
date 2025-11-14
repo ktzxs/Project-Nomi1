@@ -5,12 +5,14 @@
   <!-- Metatags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faça login na plataforma Nomi e continue sua jornada de aprendizado">
 
-  <title>Login - Nomi</title>
+  <title>Login - Nomi | Plataforma Educacional</title>
 
   <!-- Links -->
   <link rel="stylesheet" href="../style/login.css">
   <link rel="shortcut icon" href="../img/icon Nomi.png">
+  <script src="../js/login.js"></script>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
@@ -23,91 +25,189 @@
 
 <body class="login-body">
 
-  <!-- Container -->
-  <div class="background"></div>
+  <!-- Background Animado -->
+  <div class="background">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="gradient-overlay"></div>
+  </div>
 
+  <!-- Partículas Flutuantes -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Container Principal -->
   <main class="container">
 
+    <!-- Botão de Voltar -->
     <div class="exit">
-      <a href="../../index.html">
+      <a href="../index.html" aria-label="Voltar para página inicial" class="back-button">
         <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        <span>Voltar</span>
       </a>
     </div>
 
-    <!-- Login -->
-    <div class="logo">
-      <img src="../img/login/logo login.png" class="logo">
+    <!-- Card de Login -->
+    <div class="login-card">
+      
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="../img/login/logo login.png" alt="Logo Nomi" class="logo">
+        <div class="logo-glow"></div>
+      </div>
+
+      <!-- Título -->
+      <div class="header-section">
+        <h1 id="h1-login">
+          <span class="welcome-text">Bem-vindo de volta!</span>
+          <span class="login-text">Faça seu Login</span>
+        </h1>
+        <p class="subtitle">Entre com sua conta para continuar aprendendo</p>
+      </div>
+
+      <!-- Formulário -->
+      <form class="input-form" action="../index.html">
+        
+        <!-- Campo de Usuário/Email -->
+        <div class="input-group">
+          <label for="username" class="input-label">
+            <ion-icon name="person-outline"></ion-icon>
+            Usuário ou Email
+          </label>
+          <div class="input-field">
+            <ion-icon name="person-outline" class="input-icon"></ion-icon>
+            <input 
+              type="text" 
+              name="username" 
+              id="username" 
+              placeholder="Digite seu usuário ou email" 
+              required
+              autocomplete="username">
+            <div class="input-border"></div>
+          </div>
+        </div>
+
+        <!-- Campo de Senha -->
+        <div class="input-group">
+          <label for="password" class="input-label">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            Senha
+          </label>
+          <div class="input-field password-field">
+            <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+            <input 
+              type="password" 
+              name="password" 
+              id="password" 
+              placeholder="Digite sua senha" 
+              required
+              autocomplete="current-password">
+            <button type="button" class="toggle-password" aria-label="Mostrar/Ocultar senha">
+              <ion-icon name="eye-outline" class="eye-icon show"></ion-icon>
+              <ion-icon name="eye-off-outline" class="eye-icon hide"></ion-icon>
+            </button>
+            <div class="input-border"></div>
+          </div>
+        </div>
+
+        <!-- Opções de Lembrar e Esqueceu Senha -->
+        <div class="form-options">
+          <label class="checkbox-container">
+            <input type="checkbox" id="mantenha-conectado">
+            <span class="checkmark"></span>
+            <span class="checkbox-label">Manter conectado</span>
+          </label>
+
+          <a href="./forgot.html" class="forgot-link">
+            <ion-icon name="help-circle-outline"></ion-icon>
+            Esqueceu a senha?
+          </a>
+        </div>
+
+        <!-- Botão de Submit -->
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Entrar</span>
+          <ion-icon name="arrow-forward-outline" class="btn-icon"></ion-icon>
+          <div class="btn-shine"></div>
+        </button>
+      </form>
+
+      <!-- Divisor -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">Ou continue com</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Login com Redes Sociais -->
+      <div class="social-login">
+        <p class="social-title">Escolha uma rede social</p>
+        
+        <div class="social-icons">
+          <a href="#" class="social-btn google-btn" id="btn-google" aria-label="Login com Google">
+            <ion-icon name="logo-google"></ion-icon>
+            <span>Google</span>
+          </a>
+
+          <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank" class="social-btn facebook-btn" aria-label="Login com Facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <span>Facebook</span>
+          </a>
+        </div>
+
+        <div class="social-icons secondary">
+          <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram-icon" aria-label="Login com Instagram">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a>
+
+          <a href="https://www.linkedin.com/login/pt" target="_blank" class="social-icon linkedin-icon" aria-label="Login com LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Link para Registro -->
+      <div class="footer-section">
+        <p class="account">
+          Não possui uma conta?
+          <a href="./register.html" class="register-link">
+            <span>Cadastre-se agora</span>
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </a>
+        </p>
+      </div>
+
     </div>
 
-    <h1 id="h1-login">Login</h1>
-
-    <form class="input-form" action="../index.html">
-      <div class="input-field">
-        <input type="text" name="username" id="username" placeholder="Usuário ou Email" required>
-        <ion-icon name="person-outline"></ion-icon>
-        <div class="underline"></div>
+    <!-- Informações Adicionais (Opcional) -->
+    <div class="info-section">
+      <div class="info-card">
+        <ion-icon name="shield-checkmark-outline"></ion-icon>
+        <span>Login Seguro</span>
       </div>
-
-      <div class="input-field">
-        <input type="password" name="password" id="password" placeholder="Senha" required>
-        <div class="underline"></div>
+      <div class="info-card">
+        <ion-icon name="people-outline"></ion-icon>
+        <span>10k+ Alunos</span>
       </div>
-
-      <label class="switch">
-        <input type="checkbox" id="mantenha-conectado" class="color-checkbox">
-        <span class="slider">Mantenha-me Conectado</span>
-        <span class="forgot">
-          <a href="./forgot.html" class="toggle-link">Esqueceu a Senha?</a>
-        </span>
-      </label>
-
-      <input type="submit" value="Continue">
-    </form>
-
-    <!-- Login com Redes Sociais -->
-    <div class="footer">
-      <span class="midia">Ou Entre com uma Rede Social</span>
-
-      <div class="social-icons">
-        <a href="https://www.instagram.com/" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-
-        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-
-        <!-- Google Login -->
-        <a id="btn-google">
-          <ion-icon name="logo-google"></ion-icon>
-        </a>
-
-        <a href="https://www.linkedin.com/login/pt" target="_blank">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a>
+      <div class="info-card">
+        <ion-icon name="rocket-outline"></ion-icon>
+        <span>Aprenda Rápido</span>
       </div>
     </div>
-
-    <p class="account">
-      Não possui uma Conta?
-      <a href="./signup.html"><span class="toggle-link">Resgistre-se</span></a>
-    </p>
   </main>
 
   <!-- Script dos Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-  <!-- Botão Google -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btnGoogle = document.getElementById('btn-google');
-      if (btnGoogle) {
-        btnGoogle.addEventListener('click', googleLogin);
-      }
-    });
-  </script>
-
 </body>
 
 </html>

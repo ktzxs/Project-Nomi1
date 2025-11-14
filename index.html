@@ -4,85 +4,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nomi - Transforme o aprendizado com tecnologia. Plataforma educacional moderna e inovadora.">
+    <meta name="keywords" content="educação, tecnologia, aprendizado, cursos online, Nomi">
+    <meta name="author" content="Nomi">
 
-    <!--Links-->
     <link rel="shortcut icon" href="img/icon Nomi.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
 
-    <!-- Script dos Icons -->
+    <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <title>Nomi</title>
+    <title>Nomi - Transforme o Aprendizado com Tecnologia</title>
 </head>
 
 <body>
-    <Header>
+    <!-- Background decorativo animado -->
+    <div class="background-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <header>
         <section class="topo">
             <picture>
-                <a href="#">
-                    <img src="img/Logo Nomi.png" alt="logo" class="logo">
+                <a href="#" aria-label="Voltar para página inicial">
+                    <img src="img/Logo Nomi.png" alt="Logo Nomi - Plataforma Educacional" class="logo">
                 </a>
             </picture>
 
-            <nav>
-                <a href='#'>Inicio</a>
-                <a href='#'>Contatos</a>
-                <a href='html/login.html'>Login <ion-icon name="person-outline"></ion-icon></a>
+            <nav aria-label="Navegação principal">
+                <a href="#" class="nav-link">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span>Início</span>
+                </a>
+                <a href="#contatos" class="nav-link">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>Contatos</span>
+                </a>
+                <a href="html/login.html" class="nav-link login-btn">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <span>Login</span>
+                </a>
             </nav>
 
+            <!-- Menu Hamburger para Mobile -->
+            <button class="menu-toggle" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </section>
-    </Header>
+    </header>
 
-    <Main>
-        <section class="banner">
-            <div>
-                <h1>Transforme o aprendizado com tecnologia</h1>
-                <p>Explore o futuro da educação com a Nomi</p>
+    <main>
+        <!-- Banner Hero Section -->
+        <section class="banner" id="inicio">
+            <div class="banner-content">
+                <span class="badge">🚀 Novidade</span>
+                <h1>
+                    Transforme o aprendizado 
+                    <span class="gradient-text">com tecnologia</span>
+                </h1>
+                <p>Explore o futuro da educação com a Nomi e desenvolva suas habilidades com nossa plataforma inovadora</p>
 
                 <div class="buttons">
-                    <button class="entrar">Explorar Curso</button>
-                    <button class="saiba">Saiba Mais</button>
+                    <button class="entrar" aria-label="Explorar cursos disponíveis">
+                        <span>Explorar Cursos</span>
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    </button>
+                    <button class="saiba" aria-label="Saiba mais sobre a Nomi">
+                        <span>Saiba Mais</span>
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                    </button>
+                </div>
+
+                <!-- Estatísticas -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <div>
+                            <strong>10k+</strong>
+                            <span>Alunos</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                        <div>
+                            <strong>95%</strong>
+                            <span>Aprovação</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <ion-icon name="star-outline"></ion-icon>
+                        <div>
+                            <strong>4.9</strong>
+                            <span>Avaliação</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="img-banner">
-                <img src="img/imagem banner.png" alt="banner">
+                <div class="banner-image-wrapper">
+                    <img src="img/imagem banner.png" alt="Ilustração representando aprendizado digital e tecnologia">
+                    <!-- Elementos decorativos flutuantes -->
+                    <div class="float-icon float-1">
+                        <ion-icon name="bulb-outline"></ion-icon>
+                    </div>
+                    <div class="float-icon float-2">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                    </div>
+                    <div class="float-icon float-3">
+                        <ion-icon name="desktop-outline"></ion-icon>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!--Indice de avanco-->
+        <!-- Widget de Progresso -->
         <div class="sidebar-widget">
-            <h3> Progresso de Aprendizado</h3>
+            <div class="widget-header">
+                <ion-icon name="trending-up-outline"></ion-icon>
+                <h3>Progresso de Aprendizado</h3>
+            </div>
             <div class="item">
-                <div class="bar">
-                    <div class="level" style="width: 75%"></div>
+                <div class="progress-info">
+                    <span class="progress-label">Seu desempenho</span>
+                    <span class="progress-percentage">75%</span>
                 </div>
-                <span class="value">Boa (75/100)</span>
+                <div class="bar">
+                    <div class="level" style="width: 75%">
+                        <span class="progress-shine"></span>
+                    </div>
+                </div>
+                <span class="value">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    Boa (75/100)
+                </span>
             </div>
         </div>
 
-        <!-- Desenvolvimento do Slide -->
-        <section class="slider">
+        <!-- Carrossel -->
+        <section class="slider" aria-label="Carrossel de destaques">
+            <div class="slider-header">
+                <h2>
+                    <ion-icon name="images-outline"></ion-icon>
+                    Destaques da Plataforma
+                </h2>
+            </div>
+
             <section class="slides">
-                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio1" checked>
                 <input type="radio" name="radio-btn" id="radio2">
                 <input type="radio" name="radio-btn" id="radio3">
                 <input type="radio" name="radio-btn" id="radio4">
 
                 <section class="slide first">
-                    <img src="img/carrosel/carossel img1.png" alt="image 1">
+                    <img src="img/carrosel/carossel img1.png" alt="Destaque 1 - Cursos interativos">
+                    <div class="slide-caption">
+                        <h3>Cursos Interativos</h3>
+                        <p>Aprenda de forma dinâmica e envolvente</p>
+                    </div>
                 </section>
                 <section class="slide">
-                    <img src="img/carrosel/carrosel img2.png" alt="image 1">
+                    <img src="img/carrosel/carrosel img2.png" alt="Destaque 2 - Certificados reconhecidos">
+                    <div class="slide-caption">
+                        <h3>Certificados Reconhecidos</h3>
+                        <p>Valorize seu currículo profissional</p>
+                    </div>
                 </section>
                 <section class="slide">
-                    <img src="img/carrosel/carrosel img3.png" alt="image 1">
+                    <img src="img/carrosel/carrosel img3.png" alt="Destaque 3 - Suporte especializado">
+                    <div class="slide-caption">
+                        <h3>Suporte Especializado</h3>
+                        <p>Tire suas dúvidas com especialistas</p>
+                    </div>
                 </section>
                 <section class="slide">
-                    <img src="img/carrosel/carrosel img4.png" alt="image 1">
+                    <img src="img/carrosel/carrosel img4.png" alt="Destaque 4 - Comunidade ativa">
+                    <div class="slide-caption">
+                        <h3>Comunidade Ativa</h3>
+                        <p>Conecte-se com outros estudantes</p>
+                    </div>
                 </section>
 
-                <section class="navigation-auto">
+                <section class="navigation-auto" aria-hidden="true">
                     <section class="auto-btn1"></section>
                     <section class="auto-btn2"></section>
                     <section class="auto-btn3"></section>
@@ -90,46 +198,235 @@
                 </section>
             </section>
 
-            <section class="manual-navigation">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+            <section class="manual-navigation" role="tablist">
+                <label for="radio1" class="manual-btn" role="tab" aria-label="Ir para slide 1"></label>
+                <label for="radio2" class="manual-btn" role="tab" aria-label="Ir para slide 2"></label>
+                <label for="radio3" class="manual-btn" role="tab" aria-label="Ir para slide 3"></label>
+                <label for="radio4" class="manual-btn" role="tab" aria-label="Ir para slide 4"></label>
             </section>
         </section>
 
-        <h1 id="h1-login">Módulos</h1>
-    
-        <div class="cursos">
-            <div class="block">
-                <img src="img/modulos/modulo 1.png" class="mod"/>
-                <h2>Módulo 1</h2>
+        <!-- Seção de Módulos -->
+        <section class="modules-section" id="modulos">
+            <h1 id="h1-login">
+                <ion-icon name="book-outline"></ion-icon>
+                Nossos Módulos
+            </h1>
+            <p class="section-subtitle">Escolha o módulo ideal para sua jornada de aprendizado</p>
+
+            <div class="cursos">
+                <article class="block" data-module="1">
+                    <div class="block-icon">
+                        <img src="img/modulos/modulo 1.png" class="mod" alt="Ícone do Módulo 1">
+                    </div>
+                    <div class="block-content">
+                        <h2>Módulo 1</h2>
+                        <p class="module-desc">Fundamentos essenciais</p>
+                        <div class="module-meta">
+                            <span class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                8 semanas
+                            </span>
+                            <span class="level">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                                Iniciante
+                            </span>
+                        </div>
+                        <button class="module-btn" aria-label="Acessar Módulo 1">
+                            Acessar
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="block" data-module="2">
+                    <div class="block-icon">
+                        <img src="img/modulos/modulo 2.png" class="mod" alt="Ícone do Módulo 2">
+                    </div>
+                    <div class="block-content">
+                        <h2>Módulo 2</h2>
+                        <p class="module-desc">Desenvolvimento prático</p>
+                        <div class="module-meta">
+                            <span class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                10 semanas
+                            </span>
+                            <span class="level">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                                Intermediário
+                            </span>
+                        </div>
+                        <button class="module-btn" aria-label="Acessar Módulo 2">
+                            Acessar
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="block" data-module="3">
+                    <div class="block-icon">
+                        <img src="img/modulos/modulo 3.png" class="mod" alt="Ícone do Módulo 3">
+                    </div>
+                    <div class="block-content">
+                        <h2>Módulo 3</h2>
+                        <p class="module-desc">Técnicas avançadas</p>
+                        <div class="module-meta">
+                            <span class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                12 semanas
+                            </span>
+                            <span class="level">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                                Avançado
+                            </span>
+                        </div>
+                        <button class="module-btn" aria-label="Acessar Módulo 3">
+                            Acessar
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="block" data-module="4">
+                    <div class="block-icon">
+                        <img src="img/modulos/modulo 4.png" class="mod" alt="Ícone do Módulo 4">
+                    </div>
+                    <div class="block-content">
+                        <h2>Módulo 4</h2>
+                        <p class="module-desc">Especialização completa</p>
+                        <div class="module-meta">
+                            <span class="duration">
+                                <ion-icon name="time-outline"></ion-icon>
+                                14 semanas
+                            </span>
+                            <span class="level">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                                Expert
+                            </span>
+                        </div>
+                        <button class="module-btn" aria-label="Acessar Módulo 4">
+                            Acessar
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção de Benefícios -->
+        <section class="benefits-section">
+            <h2 class="benefits-title">Por que escolher a Nomi?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <ion-icon name="flash-outline"></ion-icon>
+                    </div>
+                    <h3>Aprendizado Rápido</h3>
+                    <p>Metodologia eficiente para resultados em menos tempo</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    </div>
+                    <h3>Conteúdo Certificado</h3>
+                    <p>Material desenvolvido por especialistas da área</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <ion-icon name="phone-portrait-outline"></ion-icon>
+                    </div>
+                    <h3>Acesso Mobile</h3>
+                    <p>Estude onde e quando quiser, do seu celular</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Assistência disponível a qualquer momento</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contatos">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="img/Logo Nomi.png" alt="Logo Nomi" class="footer-logo">
+                <p class="footer-description">Transformando o futuro da educação através da tecnologia</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook da Nomi">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="#" aria-label="Instagram da Nomi">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="#" aria-label="LinkedIn da Nomi">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                    <a href="#" aria-label="YouTube da Nomi">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                </div>
             </div>
 
-            <div class="block">
-                <img src="img/modulos/modulo 2.png" class="mod"/>
-                <h2>Módulo 2</h2>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                </ul>
             </div>
 
-            <div class="block">
-                <img src="img/modulos/modulo 3.png" class="mod"/>
-                <h2>Módulo 3</h2>
+            <div class="footer-section">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
             </div>
 
-            <div class="block">
-                <img src="img/modulos/modulo 4.png" class="mod"/>
-                <h2>Módulo 4</h2>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul class="contact-info">
+                    <li>
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <a href="mailto:contato@nomi.com">contato@nomi.com</a>
+                    </li>
+                    <li>
+                        <ion-icon name="call-outline"></ion-icon>
+                        <a href="tel:+5511999999999">(11) 99999-9999</a>
+                    </li>
+                    <li>
+                        <ion-icon name="location-outline"></ion-icon>
+                        <span>São Paulo, SP - Brasil</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </Main>
 
-    <footer class="footer">
-        <div>
-            <p class="text-footer">Todos os direitos reservados por ©Nomi</p>
-        </div> 
+        <div class="footer-bottom">
+            <p class="text-footer">
+                Todos os direitos reservados por ©Nomi 2025
+            </p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <span>•</span>
+                <a href="#">Termos de Serviço</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Botão de voltar ao topo -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
+    <script src="./js/script.js"></script>
 </body>
 
-<!--Script-->
-<script src="./js/script.js"></script>
 </html>

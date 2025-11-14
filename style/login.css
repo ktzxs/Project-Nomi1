@@ -1,332 +1,1313 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body {
-    background-image: url(../img/login/background\ login.png);
-    background-size: cover;
+:root {
+    --primary-blue: #2563eb;
+    --secondary-blue: #007bff;
+    --cyan: #00ffff;
+    --yellow: #f9fd03;
+    --dark-blue: #1e40af;
+    --text-dark: #1a1a1a;
+    --text-light: #666;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --error: #ef4444;
+    --success: #10b981;
 }
 
-.login-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body.login-body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #007bff 100%);
+}
+
+/* ============================================
+   BACKGROUND ANIMADO
+============================================ */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+    z-index: 0;
+    overflow: hidden;
 }
 
-main.container {
-  max-width: 500px;
-  min-height: 35vh;
-  padding: 2rem;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
-  border-radius: 10px;
-  backdrop-filter: blur(0.4rem);
-  z-index: 1;
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float-shape 20s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--cyan);
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--yellow);
+    bottom: -150px;
+    right: -150px;
+    animation-delay: 5s;
+}
+
+.shape-3 {
+    width: 350px;
+    height: 350px;
+    background: var(--primary-blue);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 10s;
+}
+
+@keyframes float-shape {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(249, 253, 3, 0.1) 0%, transparent 50%);
+    animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   PARTÍCULAS FLUTUANTES
+============================================ */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float-particle 15s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 40%; top: 40%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 60%; top: 70%; animation-delay: 1s; }
+.particle:nth-child(5) { left: 80%; top: 30%; animation-delay: 3s; }
+.particle:nth-child(6) { left: 90%; top: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { left: 30%; top: 10%; animation-delay: 2.5s; }
+.particle:nth-child(8) { left: 70%; top: 90%; animation-delay: 4.5s; }
+
+@keyframes float-particle {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+============================================ */
+.container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ============================================
+   BOTÃO VOLTAR
+============================================ */
+.exit {
+    align-self: flex-start;
+    margin-bottom: -1rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+.back-button ion-icon {
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   CARD DE LOGIN
+============================================ */
+.login-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.login-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--cyan), var(--primary-blue));
+    background-size: 200% 100%;
+    animation: gradient-flow 3s ease infinite;
+}
+
+@keyframes gradient-flow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ============================================
+   LOGO
+============================================ */
+.logo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 4px 20px rgba(37, 99, 235, 0.3));
+    animation: logo-float 3s ease-in-out infinite;
 }
 
-main .logo {
-  width: 400px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 2rem;
+@keyframes logo-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow-pulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* ============================================
+   HEADER SECTION
+============================================ */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 #h1-login {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  position: relative;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
 }
 
-#h1-login::before {
-  content: '';
-  position: absolute;
-  height: 5px;
-  width: 36px;
-  bottom: 5px;
-  left: 0;
-  border-radius: 8px;
-  margin: -5px;
-  margin-left: 0.5px;  
-  background-color: aqua;
+.welcome-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-light);
+    animation: fadeInDown 0.6s ease;
 }
 
-main img {
-  width: 80px;
-  margin-bottom: 1rem;
+.login-text {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-blue), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease;
 }
 
-main a {
-  text-decoration: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    animation: fadeInDown 1s ease;
 }
 
-.exit {
-  position: absolute;
-  top: 0.1%;
-  left: 1%;
-  text-align: left;
-  font-size: 45px;
-  cursor: pointer;
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.exit a ion-icon {
-  color: #ffffff;
-}
-
-.exit a ion-icon:hover {
-  color: aqua;
-}
-
-#h1-signup {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-#h1-signup::before {
-    content: '';
-    position: absolute;
-    height: 5px;
-    width: 31px;
-    bottom: 5px;
-    left: 0;
-    border-radius: 8px;
-    background-color: #ffffff;
-}
-
-#verify-h1 {
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-#verify-p {
-  color: #ECECEC;
-  font-size: 1.01rem;
-}
-
+/* ============================================
+   FORMULÁRIO
+============================================ */
 .input-form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.input-label ion-icon {
+    font-size: 1rem;
+    color: var(--primary-blue);
 }
 
 .input-field {
-  position: relative;
-  margin-bottom: 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-field.focused {
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.input-icon {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-right: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.input-field.focused .input-icon {
+    color: var(--primary-blue);
 }
 
 .input-field input {
-  outline: none;
-  font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  padding: 0.5rem;
-  border-radius: 8px;
-  box-sizing: border-box;
-  box-shadow: 
-    3px 3px 8px rgba(0, 0, 0, 0.4),
-    0 0 2px rgba(0, 0, 0, 0.3),
-    inset 0 0 5px rgba(255, 255, 255, 0.2);
-  transition: box-shadow 0.3s ease, transform 0.2s ease, border 0.3s ease;
-  position: relative;
-  top: 0;
-  border: 2px solid transparent;
-}
-
-.input-field input:focus {
-  box-shadow: 
-    5px 5px 10px rgba(0, 0, 0, 0.5),
-    0 0 4px rgba(0, 0, 0, 0.4),
-    inset 0 0 5px rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
-  outline: 2px solid var(--tertiary);
-  outline-offset: 3px; 
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
 }
 
 .input-field input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+    color: var(--text-light);
+    opacity: 0.7;
 }
 
-.input-field .underline {
-  margin: 0 auto 0.7rem;
-  position: relative;
-  border-radius: 8px;
-  bottom: 1px;
-  left: 0;
-  height: 2px;
-  width: 98%;
-  background-color: rgba(0, 0, 0, 0.1);
+.input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--cyan));
+    transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
-.input-field input:focus ~ .underline::before {
-  transform: scaleX(1);
+.input-field.focused .input-border {
+    width: 100%;
 }
 
-.input-field ion-icon {
-  position: absolute;
-  right: 12px;
-  top: 35%;
-  transform: translateY(-50%);
-  color: black;
-  font-size: 1.5rem;
-  pointer-events: none;
-  transition: transform 0.2s ease, color 0.3s ease;
+/* Toggle Password */
+.password-field {
+    padding-right: 3rem;
 }
 
-.input-field input:focus ~ ion-icon {
-  color: #00b7ff;
-  transform: translateY(-60%) scale(1.1);
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: color 0.3s ease;
 }
 
-input[type="checkbox"] {
-  accent-color: #00b7ff;
-  cursor: pointer;
+.toggle-password:hover {
+    color: var(--primary-blue);
 }
 
-.slider {
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.toggle-password ion-icon {
+    font-size: 1.25rem;
 }
 
-.midia {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.eye-icon.hide {
+    display: none;
 }
 
-.forgot {
-  font-size: 0.9;
-  margin-left: 3.1rem;
-  text-align: right;
-  text-decoration: none;
-  transition: color 0.2s;
-  cursor: pointer;
-  font-size: 1rem;
-  color: var(--preto);
+/* ============================================
+   FORM OPTIONS
+============================================ */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.forgot:hover {
-  color: var(--tertiary);
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
 }
 
-form input[type="submit"] {
-  margin-top: 2rem;
-  padding: 0.6rem;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  font-size: 0.9rem;
-  font-weight: 300;
-  border-radius: 4px;
-  background-color: transparent ;
-  transition: all 0.3s ease;
-  border: 2px solid;
-  border-color: #ffffff;
+.checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
-form input[type="submit"]:hover {
-  letter-spacing: 1px;
-  background-color: rgb(0, 132, 255);
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-light);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-p.agree {
-  color: #ECECEC;
-  display: flex;
+.checkmark::after {
+    content: '✓';
+    color: white;
+    font-size: 0.875rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
 }
 
-#agree {
-  margin-right: 0.4rem;
-  cursor: pointer;
+.checkbox-container input:checked ~ .checkmark {
+    background: linear-gradient(135deg, var(--primary-blue), var(--cyan));
+    border-color: var(--primary-blue);
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
+.checkbox-container input:checked ~ .checkmark::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
-.footer span {
-  color: #ECECEC;
-  font-size: 0.8rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
+.checkbox-label {
+    font-size: 0.875rem;
+    color: var(--text-dark);
 }
 
-.footer p {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 0.8rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
+.forgot-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: var(--dark-blue);
+    gap: 0.5rem;
+}
+
+.forgot-link ion-icon {
+    font-size: 1rem;
+}
+
+/* ============================================
+   BOTÃO SUBMIT
+============================================ */
+.submit-btn {
+    position: relative;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.5);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:hover .btn-shine {
+    left: 100%;
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.submit-btn.loading .btn-text::after {
+    content: '...';
+    animation: loading-dots 1s infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% {
+        content: '.';
+    }
+    40% {
+        content: '..';
+    }
+    60%, 100% {
+        content: '...';
+    }
+}
+
+/* ============================================
+   DIVISOR
+============================================ */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--text-light), transparent);
+}
+
+.divider-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ============================================
+   SOCIAL LOGIN
+============================================ */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-title {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
 }
 
 .social-icons {
-  text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-.footer .social-icons a {
-  margin: 0 10px;
+.social-icons.secondary {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0.5rem;
 }
 
-.footer .social-icons a ion-icon{
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 8px;
-  font-size: 24px;
-  text-decoration: none;
-  transition: 0.2s;
-  color: #ffffff;
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.footer .social-icons a ion-icon:hover {
-  color: #00b7ff;
-  border-color: var(--tertiary);
+.social-btn ion-icon {
+    font-size: 1.25rem;
+}
+
+.google-btn {
+    background: white;
+    color: #db4437;
+    border: 2px solid #db4437;
+}
+
+.google-btn:hover {
+    background: #db4437;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(219, 68, 55, 0.3);
+}
+
+.facebook-btn {
+    background: white;
+    color: #1877f2;
+    border: 2px solid #1877f2;
+}
+
+.facebook-btn:hover {
+    background: #1877f2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon ion-icon {
+    font-size: 1.5rem;
+}
+
+.instagram-icon {
+    background: white;
+    color: #e4405f;
+    border: 2px solid #e4405f;
+}
+
+.instagram-icon:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    transform: translateY(-2px) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+}
+
+.linkedin-icon {
+    background: white;
+    color: #0077b5;
+    border: 2px solid #0077b5;
+}
+
+.linkedin-icon:hover {
+    background: #0077b5;
+    color: white;
+    transform: translateY(-2px) rotate(-5deg);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.3);
+}
+
+/* Ripple Effect */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   FOOTER SECTION
+============================================ */
+.footer-section {
+    margin-top: 1.5rem;
+    text-align: center;
 }
 
 .account {
-font-size: 1rem;
-color: #ECECEC;
-display: flex;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
 }
 
-main .account {
-margin-top: 2rem;
+.register-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.25rem;
+    transition: all 0.3s ease;
 }
 
-.toggle-link {
-  margin-left: 5px;
-  text-align: right;
-  text-decoration: none;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: color 0.4s;
-  cursor: pointer;
-  font-size: 1rem;
-  color: aqua;
+.register-link:hover {
+    color: var(--dark-blue);
+    gap: 0.5rem;
 }
 
-.toggle-link:hover {
-  color: #00b7ff;
+.register-link ion-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.register-link:hover ion-icon {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   INFO SECTION
+============================================ */
+.info-section {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.info-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.info-card ion-icon {
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+============================================ */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .login-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 25px;
+    }
+
+    .login-text {
+        font-size: 1.75rem;
+    }
+
+    .social-icons {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icons.secondary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    body.login-body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .login-card {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .welcome-text {
+        font-size: 0.875rem;
+    }
+
+    .login-text {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.875rem;
+    }
+
+    .input-field {
+        padding: 0 0.75rem;
+    }
+
+    .input-field input {
+        padding: 0.875rem 0;
+        font-size: 0.95rem;
+    }
+
+    .submit-btn {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+    }
+
+    .social-btn {
+        padding: 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .back-button {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .info-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info-card {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .shape-1,
+    .shape-2,
+    .shape-3 {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Landscape Mobile */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .login-card {
+        padding: 1.5rem;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .header-section {
+        margin-bottom: 1rem;
+    }
+
+    .input-form {
+        gap: 1rem;
+    }
+
+    .info-section {
+        display: none;
+    }
+}
+
+/* Prevenção de zoom no iOS */
+@supports (-webkit-touch-callout: none) {
+    .input-field input {
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   PÁGINA FORGOT PASSWORD
+============================================ */
+
+/* Card de Forgot Password */
+.forgot-card {
+    max-width: 520px;
+}
+
+/* Ícone de Cadeado */
+.icon-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--cyan));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    animation: icon-float 3s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes icon-float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow-pulse 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* Input Hint */
+.input-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.input-hint ion-icon {
+    font-size: 1rem;
+    color: var(--primary-blue);
+}
+
+/* Input Error State */
+.input-field.error {
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.input-field.error .input-icon {
+    color: var(--error);
+}
+
+.input-field.error .input-border {
+    background: var(--error);
+    width: 100%;
+}
+
+/* Message Boxes */
+.message-box {
+    display: none;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    animation: slideDown 0.4s ease;
+}
+
+.message-box.show {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.success-message ion-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error);
+    color: var(--error);
+}
+
+.error-message ion-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.message-box strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.message-box p {
+    font-size: 0.875rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Additional Options */
+.additional-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.option-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-link:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transform: translateX(5px);
+}
+
+.option-link > ion-icon:first-child {
+    font-size: 1.75rem;
+    color: var(--primary-blue);
+    flex-shrink: 0;
+}
+
+.option-link > div {
+    flex: 1;
+}
+
+.option-link strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.option-link span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.option-link > ion-icon:last-child {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.option-link:hover > ion-icon:last-child {
+    transform: translateX(5px);
+}
+
+/* Help Section */
+.help-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.help-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.help-text ion-icon {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+}
+
+.help-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.help-link:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+
+/* Ajustes específicos para forgot page */
+.forgot-card .header-section {
+    margin-bottom: 2rem;
+}
+
+.forgot-card .submit-btn {
+    margin-top: 0.5rem;
+}
+
+.forgot-card .btn-icon {
+    font-size: 1.25rem;
+}
+
+/* Responsividade para Forgot Page */
+@media screen and (max-width: 768px) {
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .icon-glow {
+        width: 120px;
+        height: 120px;
+    }
+
+    .option-link {
+        padding: 0.875rem;
+    }
+
+    .option-link > ion-icon:first-child {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .forgot-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .message-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .message-box ion-icon {
+        font-size: 2.5rem;
+        margin: 0 auto;
+    }
+
+    .option-link {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .option-link > ion-icon:last-child {
+        display: none;
+    }
+
+    .help-text {
+        font-size: 0.8rem;
+    }
 }

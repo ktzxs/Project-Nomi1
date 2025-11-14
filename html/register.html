@@ -1,95 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <!--Metatags -->
+  <!-- Metatags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recupere sua senha da plataforma Nomi">
 
-  <title>Nature News</title>
+  <title>Recuperar Senha - Nomi | Plataforma Educacional</title>
 
   <!-- Links -->
   <link rel="stylesheet" href="../style/login.css">
-  
   <link rel="shortcut icon" href="../img/icon Nomi.png" type="image/x-icon">
+  <script src="../js/register.js"></script>
 
-  
-  <body class="login-body">
-    <!-- Container -->
-  <div class="background"></div>
+</head>
+
+<body class="login-body">
+
+  <!-- Background Animado -->
+  <div class="background">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="gradient-overlay"></div>
+  </div>
+
+  <!-- Partículas Flutuantes -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Container Principal -->
   <main class="container">
-    <div class="exit"><a href="login.html"><ion-icon name="arrow-back-circle-outline"></ion-icon></a></div>
 
-    <!-- Register -->
-    <div class="logo-ajuste">
-      <img src="../img/login/logo login.png" class="logo">
+    <!-- Botão de Voltar -->
+    <div class="exit">
+      <a href="login.html" aria-label="Voltar para login" class="back-button">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        <span>Voltar</span>
+      </a>
     </div>
-    <h1 id="h1-login">Sign Up</h1>
 
-    <form class="input-form" action="../user-pages/user-home.html" onsubmit="return validarSenha()">
-      <div class="input-field">
-        <input type="text" name="username" id="username" placeholder="Nome de Usuário" required>
-        <ion-icon name="person-outline"></ion-icon>
-        <div class="underline"></div>
+    <!-- Card de Recuperação -->
+    <div class="login-card forgot-card">
+      
+      <!-- Ícone de Cadeado -->
+      <div class="icon-container">
+        <div class="icon-circle">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </div>
+        <div class="icon-glow"></div>
       </div>
 
-      <div class="input-field">
-        <input type="email" name="email" id="email" placeholder="Email" required="">
+      <!-- Título -->
+      <div class="header-section">
+        <h1 id="h1-login">
+          <span class="login-text">Esqueceu sua Senha?</span>
+        </h1>
+        <p class="subtitle">
+          Não se preocupe! Digite seu email e enviaremos instruções para redefinir sua senha
+        </p>
+      </div>
+
+      <!-- Formulário -->
+      <form class="input-form" id="forgotForm">
+        
+        <!-- Campo de Email -->
+        <div class="input-group">
+          <label for="email" class="input-label">
+            <ion-icon name="mail-outline"></ion-icon>
+            Email Cadastrado
+          </label>
+          <div class="input-field">
+            <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              placeholder="Digite seu email" 
+              required
+              autocomplete="email">
+            <div class="input-border"></div>
+          </div>
+          <p class="input-hint">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            Digite o email usado no cadastro
+          </p>
+        </div>
+
+        <!-- Botão de Enviar -->
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Enviar Link de Recuperação</span>
+          <ion-icon name="paper-plane-outline" class="btn-icon"></ion-icon>
+          <div class="btn-shine"></div>
+        </button>
+
+        <!-- Mensagem de Sucesso/Erro -->
+        <div class="message-box success-message" id="successMessage">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          <div>
+            <strong>Email enviado com sucesso!</strong>
+            <p>Confira sua caixa de entrada e spam</p>
+          </div>
+        </div>
+
+        <div class="message-box error-message" id="errorMessage">
+          <ion-icon name="close-circle-outline"></ion-icon>
+          <div>
+            <strong>Erro ao enviar email</strong>
+            <p id="errorText">Tente novamente mais tarde</p>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Divisor -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-text">Outras opções</span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Opções Adicionais -->
+      <div class="additional-options">
+        <a href="login.html" class="option-link">
+          <ion-icon name="log-in-outline"></ion-icon>
+          <div>
+            <strong>Lembrou a senha?</strong>
+            <span>Voltar ao login</span>
+          </div>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </a>
+
+        <a href="signup.html" class="option-link">
+          <ion-icon name="person-add-outline"></ion-icon>
+          <div>
+            <strong>Não tem conta?</strong>
+            <span>Criar nova conta</span>
+          </div>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </a>
+      </div>
+
+      <!-- Ajuda -->
+      <div class="help-section">
+        <p class="help-text">
+          <ion-icon name="help-circle-outline"></ion-icon>
+          Precisa de ajuda?
+          <a href="mailto:suporte@nomi.com" class="help-link">Entre em contato</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Informações de Segurança -->
+    <div class="info-section">
+      <div class="info-card">
+        <ion-icon name="shield-checkmark-outline"></ion-icon>
+        <span>Processo Seguro</span>
+      </div>
+      <div class="info-card">
+        <ion-icon name="time-outline"></ion-icon>
+        <span>Link válido por 1h</span>
+      </div>
+      <div class="info-card">
         <ion-icon name="mail-outline"></ion-icon>
-        <div class="underline"></div>
-      </div>
-
-      <div class="input-field">
-        <input type="password" name="password" id="password" placeholder="Senha" required="">
-        <ion-icon name="lock-closed-outline" id="togglePassword1" onclick="togglePassword('password', 'togglePassword1')"></ion-icon>
-        <div class="underline"></div>
-      </div>
-      
-      <div class="input-field">
-        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirme a Senha" required="">
-        <ion-icon name="lock-closed-outline" id="togglePassword2" onclick="togglePassword('confirmPassword', 'togglePassword2')"></ion-icon>
-        <div class="underline"></div>
-      </div>
-
-      <label class="switch">
-        <p class="agree">
-          <input type="checkbox" class="color-checkbox" id="agree" required="">Eu concordo com os
-          <a href="../terms.html">
-            <span class="toggle-link">Termos de Uso</span>
-          </a>.
-        </p>
-      </label>
-      
-      <label class="switch">
-        <p class="agree">
-          <input type="checkbox" class="color-checkbox" id="agree" required="">Eu concordo com a
-          <a href="../policy.html">
-            <span class="toggle-link">Política de Privacidade</span>
-          </a>.
-        </p>
-      </label>
-      
-      <input type="submit" value="Continue" href="../index.html">
-    </form>
-    <p id="mensagemErro" style="color: red; text-align: center;"></p>
-    
-    <!-- Login com Redes Sociais -->
-    <div class="footer">
-      <span>Ou Entre com uma Rede Social</span>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-        <a href="https://pt-br.facebook.com/login/device-based/regular/login/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a href="https://accounts.google.com/" target="_blank"><ion-icon name="logo-google"></ion-icon></a>
-        <a href="https://www.linkedin.com/login/pt" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <span>Enviado por email</span>
       </div>
     </div>
-      
-    <p class="account">Já possui uma conta?
-      <a href="./login.html"><span class="toggle-link">Entre</span></a>
-    </p>
+
   </main>
-    
-    <!-- Script dos Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Script dos Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
